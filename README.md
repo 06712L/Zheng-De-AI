@@ -27,9 +27,9 @@
 
 ## **編譯所需環境**
 
-- 編譯器:**gcc** / **clang** *(默認gcc)*
-
-- 所需庫: **stdio**/**stdlib**/**string**/**unistd**/**time**
+- 編譯器:**`gcc`** / **`clang`** *(默認gcc)*
+- 所需庫: **`stdio`**/**`stdlib`**/**`string`**/**`unistd`**/**`time`**
+- 但我已經打包好發行版了!建議用終端 *CLI* 跑 *(僅windows和Linux)*
 
 ---
 
