@@ -3,8 +3,12 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+//windows
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
-//Zheng De AI V0.1
+//Zheng De AI V0.1 windows debug
 
 /*AI說話函數*/
 void aiprintf(char c[500])
@@ -22,6 +26,11 @@ void aiprintf(char c[500])
 
 int main()
 {
+    #ifdef _WIN32
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
+    system("chcp 65001 > nul");
+    #endif
     srand(time(NULL));
 
     char c[500];

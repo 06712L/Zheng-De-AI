@@ -1,6 +1,6 @@
 CC ?= gcc
 CFLAGS = -Wall -O2 -std=gnu17
-TARGET = ZhengDeAi
+TARGET = ZhengDeAI
 OBJS = mainAI.o
 .PHONY: clean
 all: ZhengDeAi
