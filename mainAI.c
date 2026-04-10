@@ -20,6 +20,7 @@ void aiprintf(char c[500])
     {
         printf("%c", c[i]);
         fflush(stdout);
+        usleep(100000);
     }
     printf("\n");
 }
