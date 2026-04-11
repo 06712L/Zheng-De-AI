@@ -9,7 +9,7 @@ ZhengDeAI: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
 
 
-%.o: %c
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
