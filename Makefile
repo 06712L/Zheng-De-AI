@@ -3,13 +3,13 @@ CFLAGS = -Wall -O2 -std=gnu17
 TARGET = ZhengDeAI
 OBJS = mainAI.o
 .PHONY: clean
-all: ZhengDeAi
+all: ZhengDeAI
 
-ZhengDeAi: $(OBJS)
-	$(CC) $(CFLAGS) $(OBJD) -o $(TARGET)
+ZhengDeAI: $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
 
 
-%.o: %c
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
