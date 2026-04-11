@@ -6,7 +6,7 @@ OBJS = mainAI.o
 all: ZhengDeAi
 
 ZhengDeAi: $(OBJS)
-	$(CC) $(CFLAGS) $(OBJD) -o $(TARGET)
+	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
 
 
 %.o: %c
