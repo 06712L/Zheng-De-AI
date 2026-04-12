@@ -6,7 +6,6 @@
 //windows
 #ifdef _WIN32
 #include <windows.h>
-#define cs "cls"
 #endif
 
 //Zheng De AI V0.2 windows
@@ -33,7 +32,7 @@ int main()
 
     char c[500];
     char aic[1000];
-    system(cs);
+    system("cls");
 
     /*假加載*/
     for(int i = 0; i < 101; i++)
@@ -52,7 +51,7 @@ int main()
     }
     printf("\ndone!\n");
     sleep(1);
-    system(cs);
+    system("cls");
     strcpy(c,"很高興被載入");
     aiprintf(c);
     sleep(2);
