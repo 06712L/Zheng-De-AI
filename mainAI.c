@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <time.h>
 
-//Zheng De AI V0.1 linux
+//Zheng De AI V0.2 linux
 
 /*AI說話函數*/
 void aiprintf(char c[500])
@@ -16,7 +16,8 @@ void aiprintf(char c[500])
     {
         printf("%c", c[i]);
         fflush(stdout);
-        usleep(100000);
+        //0.75s
+        usleep(75000);
     }
     printf("\n");
 }
@@ -36,7 +37,8 @@ int main()
         fflush(stdout);
         if(i != 99)
         {
-            usleep(100000);
+            //0.95s
+            usleep(95000);
         }
         else
         {
@@ -65,6 +67,7 @@ int main()
         printf("user:");
         fflush(stdout);
         scanf("%s",c);
+        //退出保險請打114514專線
         if (!strcmp(c, "退出") || !strcmp(c, "quit"))
             {
                 printf("正在退出...\n");
@@ -84,9 +87,33 @@ int main()
                 strcpy(aic, "他是我們的太陽!");
                 aiprintf(aic);
             }
+            //new
+            else if(!strcmp(c, "中原在哪"))
+            {
+                strcpy(aic, "來自中原的一群夥伴,結廬東南山");
+                aiprintf(aic);
+            }
             else if (!strcmp(c, "關於你"))
             {
                 strcpy(aic, "我是正德AI,由06712L開發");
+                aiprintf(aic);
+            }
+            //new
+            else if(!strcmp(c, "生態池裡最多的是什麼"))
+            {
+                strcpy(aic, "根據多方資料來看,生態池最多的是游移憫");
+                aiprintf(aic);
+            }
+            //new
+            else if(!strcmp(c, "今年是西元幾年"))
+            {
+                strcpy(aic, "今年是2024年,不同意的是gay");
+                aiprintf(aic);
+            }
+            //new
+            else if(!strcmp(c, "who are you"))
+            {
+                strcpy(aic, "Hi, I'm Baldi,nice to meat you");
                 aiprintf(aic);
             }
             else
@@ -94,7 +121,7 @@ int main()
                 printf("我不道啊\n");
             }
             quiets = rand() % 101;
-            if(quiets >= 0 && quiets <= 98)
+            if(quiets >= 0 && quiets <= 91)
             {
                 quiet = 0;
             }

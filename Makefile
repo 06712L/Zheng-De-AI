@@ -13,7 +13,7 @@ ZhengDeAI: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)-release
 
 
-ZhengDeAIdebug: $(OBJS)
+Linuxdebug: $(OBJS)
 	$(CC) $(CFLAGSdebug) $(OBJS) -o $(TARGET)-debug
 
 
