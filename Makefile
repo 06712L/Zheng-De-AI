@@ -31,7 +31,3 @@ windebug: $(OBJSwin)
 
 clean:
 	rm -rf $(TARGET) $(OBJS)
-
-
-cleanwin:
-	rm -rf $(TARGET) $(OBJSwin)
