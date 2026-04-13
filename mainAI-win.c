@@ -3,7 +3,6 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
-//windows
 #ifdef _WIN32
 #include <windows.h>
 #endif
