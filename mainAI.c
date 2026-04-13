@@ -6,6 +6,13 @@
 
 //Zheng De AI V0.2 linux
 
+/*暴力寫入配置*/
+typedef struct banana
+{
+    int d;
+    struct banana *n;
+}ba;
+
 /*AI說話函數*/
 void aiprintf(char c[500])
 {
@@ -17,7 +24,7 @@ void aiprintf(char c[500])
         printf("%c", c[i]);
         fflush(stdout);
         //0.75s
-        usleep(75000);
+        usleep(55000);
     }
     printf("\n");
 }
@@ -29,6 +36,8 @@ int main()
     char c[500];
     char aic[1000];
     system("clear");
+    ba *a = NULL;
+    ba *z = NULL;
 
     /*假加載*/
     for(int i = 0; i < 101; i++)
@@ -38,7 +47,7 @@ int main()
         if(i != 99)
         {
             //0.95s
-            usleep(95000);
+            usleep(50000);
         }
         else
         {
@@ -50,7 +59,6 @@ int main()
     system("clear");
     strcpy(c,"很高興被載入");
     aiprintf(c);
-    sleep(2);
     /*AI主程序*/
     while(1)
     {
@@ -66,7 +74,8 @@ int main()
         }
         printf("user:");
         fflush(stdout);
-        scanf("%s",c);
+        fgets(c, 500, stdin);
+        c[strcspn(c, "\n")] = '\0';
         //退出保險請打114514專線
         if (!strcmp(c, "退出") || !strcmp(c, "quit"))
             {
@@ -87,7 +96,6 @@ int main()
                 strcpy(aic, "他是我們的太陽!");
                 aiprintf(aic);
             }
-            //new
             else if(!strcmp(c, "中原在哪"))
             {
                 strcpy(aic, "來自中原的一群夥伴,結廬東南山");
@@ -98,23 +106,55 @@ int main()
                 strcpy(aic, "我是正德AI,由06712L開發");
                 aiprintf(aic);
             }
-            //new
+            //修改過
             else if(!strcmp(c, "生態池裡最多的是什麼"))
             {
-                strcpy(aic, "根據多方資料來看,生態池最多的是游移憫");
+                strcpy(aic, "根據多方資料來看,生態池最多的是游移黽");
                 aiprintf(aic);
             }
-            //new
             else if(!strcmp(c, "今年是西元幾年"))
             {
                 strcpy(aic, "今年是2024年,不同意的是gay");
                 aiprintf(aic);
             }
-            //new
-            else if(!strcmp(c, "who are you"))
+            else if(strcmp(c, "who are you")  == 0)
             {
                 strcpy(aic, "Hi, I'm Baldi,nice to meat you");
                 aiprintf(aic);
+            }
+            else if(!strcmp(c, "什麼是家政課"))
+            {
+                strcpy(aic, "'家政課'是由符如華扶持的強大政權,並且符如華也是'葡萄園優格社'這個外部勢力的領導人");
+                aiprintf(aic);
+            }
+            //new
+            else if(!strcmp(c, "boom"))
+            {
+                strcpy(aic, "你確定?(y/n)");
+                aiprintf(aic);
+                fgets(c, 500, stdin);
+                c[strcspn(c, "\n")] = '\0';
+
+                if(!strcmp(c, "y"))
+                {
+                    for(long long i = 0; i < ((1024LL * 1024 * 1024) * 2); i++)
+                    {
+                        ba *bee = malloc(sizeof(ba));
+                        bee->d = 0;
+                        bee->n = NULL;
+
+                        if(a == NULL)
+                        {
+                            a = bee;
+                            z = bee;
+                        }
+                        else
+                        {
+                            z->n = bee;
+                            z = bee;
+                        }
+                    }
+                }
             }
             else
             {
@@ -130,6 +170,13 @@ int main()
                 quiet = 1;
             }
         }
+    }
+    ba *na = a;
+    while(na != NULL)
+    {
+        ba *s = na;
+        na = na->n;
+        free(s);
     }
     return 0;
 }
