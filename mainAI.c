@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <time.h>
 
-//Zheng De AI V0.2 linux
+//Zheng De AI V0.3 linux
 
 /*暴力寫入配置*/
 typedef struct banana
@@ -122,6 +122,7 @@ int main()
                 strcpy(aic, "Hi, I'm Baldi,nice to meat you");
                 aiprintf(aic);
             }
+            //new
             else if(!strcmp(c, "什麼是家政課"))
             {
                 strcpy(aic, "'家政課'是由符如華扶持的強大政權,並且符如華也是'葡萄園優格社'這個外部勢力的領導人");
