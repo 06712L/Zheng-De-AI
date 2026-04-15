@@ -3,8 +3,10 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+#define dr system("ogg123 ./music/dieram.ogg > /dev/null 2>&1 &")
+#define clear system("clear")
 
-//Zheng De AI V0.3 linux
+//Zheng De AI V0.3-alpha.2 linux
 
 /*暴力寫入配置*/
 typedef struct banana
@@ -23,7 +25,7 @@ void aiprintf(char c[500])
     {
         printf("%c", c[i]);
         fflush(stdout);
-        //0.75s
+        //0.055s
         usleep(55000);
     }
     printf("\n");
@@ -35,7 +37,7 @@ int main()
 
     char c[500];
     char aic[1000];
-    system("clear");
+    clear;
     ba *a = NULL;
     ba *z = NULL;
 
@@ -46,7 +48,7 @@ int main()
         fflush(stdout);
         if(i != 99)
         {
-            //0.95s
+            //0.05s
             usleep(50000);
         }
         else
@@ -56,7 +58,7 @@ int main()
     }
     printf("\ndone!\n");
     sleep(1);
-    system("clear");
+    clear;
     strcpy(c,"很高興被載入");
     aiprintf(c);
     /*AI主程序*/
@@ -106,7 +108,6 @@ int main()
                 strcpy(aic, "我是正德AI,由06712L開發");
                 aiprintf(aic);
             }
-            //修改過
             else if(!strcmp(c, "生態池裡最多的是什麼"))
             {
                 strcpy(aic, "根據多方資料來看,生態池最多的是游移黽");
@@ -117,18 +118,29 @@ int main()
                 strcpy(aic, "今年是2024年,不同意的是gay");
                 aiprintf(aic);
             }
-            else if(strcmp(c, "who are you")  == 0)
+            else if(!strcmp(c, "who are you"))
             {
-                strcpy(aic, "Hi, I'm Baldi,nice to meat you");
+                strcpy(aic, "Hi, I'm Baldi,nice to meet you");
                 aiprintf(aic);
             }
-            //new
             else if(!strcmp(c, "什麼是家政課"))
             {
                 strcpy(aic, "'家政課'是由符如華扶持的強大政權,並且符如華也是'葡萄園優格社'這個外部勢力的領導人");
                 aiprintf(aic);
             }
-            //new
+            else if(!strcmp(c, "向陽廣場附近的聲音是什麼生物的"))
+            {
+                int s = rand() % 114515;
+                usleep(500000);
+                for(int i = 0; i <= s; i++)
+                {
+                    printf("已搜尋%d份資料...\r",i);
+                }
+                sleep(1);
+                printf("\n");
+                strcpy(aic, "那種聲音通常是由游呱黽所發出的,這個生物是游移黽的一種變種,特點是會發出類似'呱'的聲音");
+                aiprintf(aic);
+            }
             else if(!strcmp(c, "boom"))
             {
                 strcpy(aic, "你確定?(y/n)");
@@ -138,10 +150,27 @@ int main()
 
                 if(!strcmp(c, "y"))
                 {
-                    for(long long i = 0; i < ((1024LL * 1024 * 1024) * 2); i++)
+                    long long bb = 0;
+                    long long siz = ((1024LL * 1024 * 1024) * 2);
+                    sleep(1);
+                    clear;
+                    dr;
+                    usleep(100000);
+                    printf("AI:Attention,the reactor startup sequence has been initialized\n");
+                    sleep(3);
+                    printf("AI:Pease evacuate from the core chamber immediately\n");
+                    sleep(7);
+                    printf("AI:lnjecting fuel solution into lasers...\n");
+                    sleep(10);
+                    clear;
+                    printf("AI:Activating reactor lasers and beginning infusion sequence\n");
+                    sleep(12);
+
+                    for(long long i = 0; i < siz; i++)
                     {
+                        bb++;
                         ba *bee = malloc(sizeof(ba));
-                        bee->d = 0;
+                        bee->d = 67;
                         bee->n = NULL;
 
                         if(a == NULL)
@@ -154,6 +183,7 @@ int main()
                             z->n = bee;
                             z = bee;
                         }
+                        printf("已寫入%lld次\n",bb);
                     }
                 }
             }
