@@ -34,4 +34,8 @@ windebug: $(OBJSwin)
 
 
 clean:
-	rm -rf $(TARGET) $(OBJS)
+	rm -rf $(TARGET)-release $(TARGET)-debug $(OBJS)
+
+
+cleanwin:
+	rm -rf $(TARGET)-release.exe $(TARGET)-debug.exe $(OBJSwin)

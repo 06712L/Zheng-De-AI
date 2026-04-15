@@ -40,6 +40,8 @@ int main()
     clear;
     ba *a = NULL;
     ba *z = NULL;
+    int quiet = 0;
+    int quiets = 0;
 
     /*假加載*/
     for(int i = 0; i < 101; i++)
@@ -64,8 +66,6 @@ int main()
     /*AI主程序*/
     while(1)
     {
-        int quiet = 0;
-        int quiets = 0;
         if(quiet == 0)
         {
         printf("安靜模式:否\n");
@@ -151,7 +151,7 @@ int main()
                 if(!strcmp(c, "y"))
                 {
                     long long bb = 0;
-                    long long siz = ((1024LL * 1024 * 1024) * 2);
+                    long long siz = ((1024LL * 1024 * 1024) * 4);
                     sleep(1);
                     clear;
                     dr;
