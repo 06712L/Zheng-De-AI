@@ -122,7 +122,7 @@ int main()
             }
             else if(!strcmp(c, "who are you"))
             {
-                strcpy(aic, "Hi, I'm Baldi,nice to meat you");
+                strcpy(aic, "Hi, I'm Baldi,nice to meet you");
                 aiprintf(aic);
             }
             else if(!strcmp(c, "什麼是家政課"))
