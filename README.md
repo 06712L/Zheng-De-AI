@@ -43,6 +43,7 @@
 
 - 編譯器:**`gcc`** / **`clang`** *(默認gcc)*
 - 所需庫: **`stdio`**/**`stdlib`**/**`string`**/**`unistd`**/**`time`**
+- 所需程序: **ogg123** *(only Linux)*
 - 但我已經打包好發行版了! *(僅windows X86-64和Linux X86-64)*
 
 ## **Makefile** *(僅限Linux)*
