@@ -1,14 +1,15 @@
+![V0.3-alpha.3 AD](./AD/V0.3-alpha.3_AD.png "zdAI AD")
+
 # **正德人工智障**
 
 ![正德AI-LOGO](./LOGO/zhengdeai.png "zdAI LOGO")
 
 這只是個垃圾項目,非真正要用AI的在下載
 
-## ***V0.3-alpha.2* 更新日誌**
+## ***V0.3-alpha.3* 更新日誌**
 
-- 新增**一句**可回應句
-- 危險的功能**更加危險**
-- 新增**音效** *(only Linux)*
+- **windows**版新增**音效** *(可能失效或不穩定)*
+- 新增一個很爛的**廣告**
 
 ## **特色功能**
 
@@ -21,7 +22,7 @@
 ## **關於模型**
 
 - 參數量: **0B**
-- 目前可回應句子: **11句**
+- 目前可回應句子: **12句**
 - 回應語言: **中文 + 英文**
 
 ## **可回應句子**
@@ -41,7 +42,8 @@
 
 ## **編譯所需環境**
 
-- 編譯器:**`gcc`** / **`clang`** *(默認gcc)*
+- Linux版編譯器:**`gcc`** / **`clang`** *(默認`gcc`)*
+- windows版編譯器:**`mingw32-gcc`** *(默認`mingw32-gcc`)*
 - 所需庫: **`stdio`**/**`stdlib`**/**`string`**/**`unistd`**/**`time`**
 - 所需程序: **ogg123** *(only Linux)*
 - 但我已經打包好發行版了! *(僅windows X86-64和Linux X86-64)*
@@ -52,6 +54,8 @@
 - **`make Linuxdebug`**: 編譯Linux未優化的版本
 - **`make win`**: 編譯Windows優化後的版本
 - **`make windebug`**: 編譯Windows未優化的版本
+- **`make clean`**: 清理Linux版編譯後產物
+- **`make cleanwin`**: 清理windows版編譯後產物
 
 ---
 

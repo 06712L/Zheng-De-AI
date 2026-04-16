@@ -1,6 +1,4 @@
 build/
-music/
 output/
 *.o
 *.a
-*.ogg

@@ -6,7 +6,7 @@
 #define dr system("ogg123 ./music/dieram.ogg > /dev/null 2>&1 &")
 #define clear system("clear")
 
-//Zheng De AI V0.3-alpha.2 linux
+//Zheng De AI V0.3-alpha.3 linux
 
 /*暴力寫入配置*/
 typedef struct banana

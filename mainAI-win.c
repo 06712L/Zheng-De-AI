@@ -1,14 +1,21 @@
+#ifdef __clangd__
+#define _WIN32
+#endif
+//windows
+#ifdef _WIN32
+#include <windows.h>
+#include <mmsystem.h>
+#pragma comment(lib, "winmm.lib")
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
-//windows
-#ifdef _WIN32
-#include <windows.h>
-#endif
+#define dr mciSendString("play dieram_mp3", NULL, 0, NULL)
+#define clear system("cls")
 
-//Zheng De AI V0.3-alpha.2 windows
+//Zheng De AI V0.3-alpha.3 windows
 
 /*暴力寫入配置*/
 typedef struct banana
@@ -37,9 +44,10 @@ int main()
 {
     srand(time(NULL));
 
+    mciSendString(L"open \".\\music\\win-dieram.mp3\" type MPEGVideo alias dieram_mp3", NULL, 0, NULL);
     char c[500];
     char aic[1000];
-    system("cls");
+    clear;
     ba *a = NULL;
     ba *z = NULL;
     int quiet = 0;
@@ -62,7 +70,7 @@ int main()
     }
     printf("\ndone!\n");
     sleep(1);
-    system("cls");
+    clear;
     strcpy(c,"很高興被載入");
     aiprintf(c);
     /*AI主程序*/
@@ -155,7 +163,19 @@ int main()
                     long long bb = 0;
                     long long siz = ((1024LL * 1024 * 1024) * 4);
                     sleep(1);
-                    sleep(32);
+                    clear;
+                    dr;
+                    usleep(100000);
+                    printf("AI:Attention,the reactor startup sequence has been initialized\n");
+                    sleep(3);
+                    printf("AI:Pease evacuate from the core chamber immediately\n");
+                    sleep(7);
+                    printf("AI:lnjecting fuel solution into lasers...\n");
+                    sleep(10);
+                    clear;
+                    printf("AI:Activating reactor lasers and beginning infusion sequence\n");
+                    sleep(12);
+
                     for(long long i = 0; i < siz; i++)
                     {
                         bb++;
