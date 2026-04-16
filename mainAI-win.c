@@ -44,7 +44,7 @@ int main()
 {
     srand(time(NULL));
 
-    mciSendString(L"open \".\\music\\win-dieram.mp3\" type MPEGVideo alias dieram_mp3", NULL, 0, NULL);
+    mciSendString("open \".\\music\\win-dieram.mp3\" type MPEGVideo alias dieram_mp3", NULL, 0, NULL);
     char c[500];
     char aic[1000];
     clear;

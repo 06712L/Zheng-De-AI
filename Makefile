@@ -2,6 +2,8 @@ CC ?= gcc
 CCwin ?= x86_64-w64-mingw32-gcc
 CFLAGS = -Wall -O2 -std=gnu17 -static
 CFLAGSdebug = -Wall -O0 -std=gnu17 -static
+CFLAGSwin = -Wall -O2 -std=gnu17 -static -lwinmm
+CFLAGSwindebug = -Wall -O0 -std=gnu17 -static -lwinmm
 TARGET = ZhengDeAI
 OBJS = mainAI.o
 OBJSwin = mainAI-win.o
@@ -18,11 +20,11 @@ Linuxdebug: $(OBJS)
 
 
 win: $(OBJSwin)
-	$(CCwin) $(CFLAGS) $(OBJSwin) -o $(TARGET)-release.exe
+	$(CCwin) $(CFLAGSwin) $(OBJSwin) -o $(TARGET)-release.exe
 
 
 windebug: $(OBJSwin)
-	$(CCwin) $(CFLAGSdebug) $(OBJSwin) -o $(TARGET)-debug.exe
+	$(CCwin) $(CFLAGSwindebug) $(OBJSwin) -o $(TARGET)-debug.exe
 
 
 %.o: %.c
