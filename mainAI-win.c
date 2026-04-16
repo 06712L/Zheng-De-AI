@@ -5,7 +5,6 @@
 #ifdef _WIN32
 #include <windows.h>
 #include <mmsystem.h>
-#pragma comment(lib, "winmm.lib")
 #endif
 #include <stdio.h>
 #include <stdlib.h>
