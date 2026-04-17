@@ -1,4 +1,4 @@
-![V0.3-alpha.3 AD](./AD/V0.3-alpha.3_AD.png "zdAI AD")
+![V0.3 AD](./AD/zdai-V0.3-ad.png "zdAI AD")
 
 # **正德人工智障**
 
