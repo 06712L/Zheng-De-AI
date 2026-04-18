@@ -29,13 +29,13 @@ Linuxdebug: $(OBJS)
 
 win: $(OBJSwin)
 	@mkdir -p $(EXE_DIR)
-	@cp -n -r ./music ./$(EXE_DIR)
+	@cp -n -r ./music-win ./$(EXE_DIR)
 	$(CCwin) $(CFLAGSwin) $(OBJSwin) -o ./$(EXE_DIR)/$(TARGET)-release.exe $(LIBSwin)
 
 
 windebug: $(OBJSwin)
 	@mkdir -p $(EXE_DIR)
-	@cp -n -r ./music ./$(EXE_DIR)
+	@cp -n -r ./music-win ./$(EXE_DIR)
 	$(CCwin) $(CFLAGSwindebug) $(OBJSwin) -o ./$(EXE_DIR)/$(TARGET)-debug.exe $(LIBSwin)
 
 
