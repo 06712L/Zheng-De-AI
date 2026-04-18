@@ -1,4 +1,4 @@
-![V0.3 AD](./AD/zdai-V0.3-ad.png "zdAI AD")
+![V0.3-beta AD](./AD/V0.3-alpha.3_AD.png "zdAI AD")
 
 # **正德人工智障**
 
@@ -6,10 +6,10 @@
 
 這只是個垃圾項目,非真正要用AI的在下載
 
-## ***V0.3-alpha.3* 更新日誌**
+## ***V0.3-beta* 更新日誌**
 
-- **windows**版新增**音效** *(可能失效或不穩定)*
-- 新增一個很爛的**廣告**
+- **全新加載界面**
+- **檔案結構重構**
 
 ## **特色功能**
 
@@ -50,12 +50,13 @@
 
 ## **Makefile** *(僅限Linux)*
 
-- **`make`**: 編譯Linux優化後的版本
+- **`make` / `make Linux`**: 編譯Linux優化後的版本
 - **`make Linuxdebug`**: 編譯Linux未優化的版本
 - **`make win`**: 編譯Windows優化後的版本
 - **`make windebug`**: 編譯Windows未優化的版本
 - **`make clean`**: 清理Linux版編譯後產物
 - **`make cleanwin`**: 清理windows版編譯後產物
+- **`make cleanall`**: 清理所有編譯後產物
 
 ---
 

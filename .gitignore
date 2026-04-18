@@ -1,4 +1,8 @@
 build/
 output/
+oiia/
+elf/
+exe/
 *.o
 *.a
+ZhengDeAI*
