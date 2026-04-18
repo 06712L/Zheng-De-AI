@@ -11,7 +11,7 @@ EXE_DIR = exe
 LIBSwin = -lwinmm
 TARGET = ZhengDeAI
 OBJS = ./$(O_DIR)/mainAI.o ./$(O_DIR)/boot.o
-OBJSwin = ./$(O_DIR)/mainAI-win.o ./$(O_DIR)boot-win.o
+OBJSwin = ./$(O_DIR)/mainAI-win.o ./$(O_DIR)/boot-win.o
 .PHONY: Linux Linuxdebug win windebug clean cleanwin cleanall
 all: Linux
 
