@@ -12,7 +12,7 @@
 #include <unistd.h>
 #include <time.h>
 #include "boot.h"
-#define op mciSendString("open \".\\music\\win-dieram.mp3\" type MPEGVideo alias dieram_mp3", NULL, 0, NULL);
+#define op mciSendString("open \".\\music-win\\win-dieram.mp3\" type MPEGVideo alias dieram_mp3", NULL, 0, NULL);
 #define dr mciSendString("play dieram_mp3", NULL, 0, NULL)
 #define clear system("cls")
 
@@ -158,6 +158,12 @@ int main()
                     strcpy(aic, "那種聲音通常是由游呱黽所發出的,這個生物是游移黽的一種變種,特點是會發出類似'呱'的聲音");
                     aiprintf(aic);
                 }
+                else if(!strcmp(c, "吃飯時適合配什麼"))
+                {
+                    sleep(1);
+                    strcpy(aic, "醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油醬油");
+                    aiprintf(aic);
+                }
                 else if(!strcmp(c, "boom"))
                 {
                     strcpy(aic, "你確定?(y/n)");
@@ -200,7 +206,8 @@ int main()
                                 z->n = bee;
                                 z = bee;
                             }
-                            printf("已寫入%lld次\n",bb);
+                            printf("已寫入%lld次\r",bb);
+                            fflush(stdout);
                         }
                     }
                 }

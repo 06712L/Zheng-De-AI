@@ -3,7 +3,8 @@ output/
 oiia/
 elf/
 exe/
-*.o
-*.a
 ZhengDeAI*
 Zheng-De-AI*/
+*.o
+*.a
+compile.sh
