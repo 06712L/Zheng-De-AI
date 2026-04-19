@@ -57,4 +57,4 @@ cleanwin:
 	rm -rf ./$(EXE_DIR) $(OBJSwin)
 
 cleanall:
-	rm -rf ./$(ELF_DIR) /.$(EXE_DIR) ./$(O_DIR)
+	rm -rf ./$(ELF_DIR) ./$(EXE_DIR) ./$(O_DIR)
