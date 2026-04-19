@@ -7,4 +7,6 @@ ZhengDeAI*
 Zheng-De-AI*/
 *.o
 *.a
+*.tar.gz
+*.zip
 compile.sh
