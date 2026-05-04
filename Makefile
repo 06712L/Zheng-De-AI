@@ -18,19 +18,17 @@ LIBS =
 LIBSwin = -lwinmm
 TARGET = ZhengDeAI
 OBJS = ./$(O_DIR)/mainAI.o ./$(O_DIR)/boot.o
-OBJSwin = ./$(O_DIR)/mainAI-win.o ./$(O_DIR)/boot-win.o
+OBJSwin = ./$(O_DIR)/mainAI-win.o ./$(O_DIR)/boot.o
 .PHONY: linux win cleanlinux cleanwin clean
 all: linux
 
 linux: $(OBJS)
 	@mkdir -p $(ELF_DIR)
-	@cp -n -r ./music ./$(ELF_DIR)
 	$(CC) $(CFLAGS) $(OBJS) -o ./$(ELF_DIR)/$(TARGET)-$(VERSION) $(LIBS)
 
 
 win: $(OBJSwin)
 	@mkdir -p $(EXE_DIR)
-	@cp -n -r ./music-win ./$(EXE_DIR)
 	$(CCwin) $(CFLAGS) $(OBJSwin) -o ./$(EXE_DIR)/$(TARGET)-$(VERSION).exe $(LIBSwin)
 
 

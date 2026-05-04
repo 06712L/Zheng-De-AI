@@ -33,8 +33,6 @@ int main()
     int quiet = 0;
     int quiets = 0;
     int boots = 0;
-    FILE *fi = fopen("modle-pro.txt", "w");
-    fclose(fi);
 
     boot:
     clear;
@@ -48,15 +46,11 @@ int main()
         goto boot;
     }
 
+    //等待修復
     else if(boots == 0)
     {
-        printf("\nloading Modle Pro...");
-        fi = fopen("modle-pro.txt", "a");
-        long long siz = (1024LL * 1024 * 1024) / 3;
-        for(long long i = 0; i < siz; i++)
-        {
-            fprintf(fi, "67\n");
-        }
+        printf("loading Modle Pro...");
+        sleep(10);
     }
 
     else
@@ -131,7 +125,7 @@ int main()
                     strcpy(aic, "'家政課'是由符如華扶持的強大政權,並且符如華也是'葡萄園優格社'這個外部勢力的領導人");
                     aiprintf(aic);
                 }
-                else if(!strcmp(c, "向陽廣場附近的聲音是什麼生物的") && boots == 0)
+                else if(!strcmp(c, "向陽廣場附近的聲音是什麼生物的"))
                 {
                     int s = rand() % 114515;
                     usleep(500000);
@@ -162,16 +156,19 @@ int main()
                         strcpy(aic, "Hello RAMMMMM");
                         aiprintf(aic);
                         usleep(500000);
-                        printf("RAM: Hello AI");
+                        puts("RAM: Hello AI");
                         usleep(500000);
                         strcpy(aic, "I want you to die!!!!!!!!!!!");
                         aiprintf(aic);
                         sleep(1);
-                        printf("RAM: NO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                        puts("RAM: NO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                         sleep(2);
-                        for(int i = 0; i < 6; i++)
+
+                        char *s = calloc((1024LL * 1024 * 1024) * 8, sizeof(char));
+                        for(long long i = 0; i < ((1024LL * 1024 * 1024) * 8); i++)
                         {
-                            calloc((1024LL * 1024 * 1024), sizeof(char));
+                            if(i % 2 != 0) {s[i] = '6';}
+                            else {s[i] = '7';}
                         }
                     }
                 }
@@ -191,8 +188,6 @@ int main()
             }
         }
     }
-    //clear modle pro
-    fi = fopen("modle-pro.txt", "w");
 
     return 0;
 }

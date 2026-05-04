@@ -30,7 +30,7 @@ void boot(int *boot)
 *   |                     |
 * 這不是正經的喔       非正式啟動日誌   
 *****************************************/
-    printf("load Model PRO(1.0 GiB)?(y/n)\n");
+    printf("load Model PRO?(y/n)\n");
     fgets(c, 50, stdin);
     c[strcspn(c, "\n")] = '\0';
 
@@ -42,7 +42,13 @@ void boot(int *boot)
         *boot = 2;
     }
 
-    else if(strchr(c, 'y') != NULL || strchr(c, 'n') != NULL)
+    else if(strchr(c, 'y') != NULL)
+    {
+        *boot = 2;
+        puts("No you can't");
+    }
+
+    else if(strchr(c, 'n') != NULL)
     {
         int li = 0;
         if(strchr(c, 'y') != NULL)
