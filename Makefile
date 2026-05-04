@@ -18,7 +18,7 @@ LIBS =
 LIBSwin = -lwinmm
 TARGET = ZhengDeAI
 OBJS = ./$(O_DIR)/mainAI.o ./$(O_DIR)/boot.o
-OBJSwin = ./$(O_DIR)/mainAI-win.o ./$(O_DIR)/boot.o
+OBJSwin = ./$(O_DIR)/mainAI-win.o ./$(O_DIR)/boot-win.o
 .PHONY: linux win cleanlinux cleanwin clean
 all: linux
 
