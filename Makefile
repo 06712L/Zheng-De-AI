@@ -1,42 +1,37 @@
 CC ?= gcc
 CCwin ?= x86_64-w64-mingw32-gcc
-CFLAGS = -Wall -O2 -std=gnu17 -static
-CFLAGSdebug = -Wall -O0 -std=gnu17 -static
-CFLAGSwin = -Wall -O2 -std=gnu17 -static
-CFLAGSwindebug = -Wall -O0 -std=gnu17 -static 
-SRC_DIR = ./src
+DEBUG ?= 0
+CFLAGS := -Wall -std=gnu17 -static
+ifeq ($(DEBUG),1)
+CFLAGS += -O0 -g
+O_DIR = oiia-debug
+VERSION = debug
+else
+CFLAGS += -O2 -s
 O_DIR = oiia
+VERSION = release
+endif
+SRC_DIR = ./src
 ELF_DIR = elf
 EXE_DIR = exe
+LIBS =
 LIBSwin = -lwinmm
 TARGET = ZhengDeAI
 OBJS = ./$(O_DIR)/mainAI.o ./$(O_DIR)/boot.o
 OBJSwin = ./$(O_DIR)/mainAI-win.o ./$(O_DIR)/boot-win.o
-.PHONY: Linux Linuxdebug win windebug clean cleanwin cleanall
-all: Linux
+.PHONY: linux win cleanlinux cleanwin clean
+all: linux
 
-Linux: $(OBJS)
+linux: $(OBJS)
 	@mkdir -p $(ELF_DIR)
 	@cp -n -r ./music ./$(ELF_DIR)
-	$(CC) $(CFLAGS) $(OBJS) -o ./$(ELF_DIR)/$(TARGET)-release
-
-
-Linuxdebug: $(OBJS)
-	@mkdir -p $(ELF_DIR)
-	@cp -n -r ./music ./$(ELF_DIR)
-	$(CC) $(CFLAGSdebug) $(OBJS) -o ./$(ELF_DIR)/$(TARGET)-debug
+	$(CC) $(CFLAGS) $(OBJS) -o ./$(ELF_DIR)/$(TARGET)-$(VERSION) $(LIBS)
 
 
 win: $(OBJSwin)
 	@mkdir -p $(EXE_DIR)
 	@cp -n -r ./music-win ./$(EXE_DIR)
-	$(CCwin) $(CFLAGSwin) $(OBJSwin) -o ./$(EXE_DIR)/$(TARGET)-release.exe $(LIBSwin)
-
-
-windebug: $(OBJSwin)
-	@mkdir -p $(EXE_DIR)
-	@cp -n -r ./music-win ./$(EXE_DIR)
-	$(CCwin) $(CFLAGSwindebug) $(OBJSwin) -o ./$(EXE_DIR)/$(TARGET)-debug.exe $(LIBSwin)
+	$(CCwin) $(CFLAGS) $(OBJSwin) -o ./$(EXE_DIR)/$(TARGET)-$(VERSION).exe $(LIBSwin)
 
 
 ./$(O_DIR)/%.o: $(SRC_DIR)/%.c
@@ -49,12 +44,12 @@ windebug: $(OBJSwin)
 	$(CCwin) $(CFLAGS) -c $< -o $@
 
 
-clean:
+cleanlinux:
 	rm -rf ./$(ELF_DIR) $(OBJS)
 
 
 cleanwin:
 	rm -rf ./$(EXE_DIR) $(OBJSwin)
 
-cleanall:
+clean:
 	rm -rf ./$(ELF_DIR) ./$(EXE_DIR) ./$(O_DIR)

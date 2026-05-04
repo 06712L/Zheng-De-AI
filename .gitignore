@@ -9,4 +9,5 @@ Zheng-De-AI*/
 *.a
 *.tar.gz
 *.zip
+*.kdev4
 compile.sh

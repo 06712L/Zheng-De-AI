@@ -4,17 +4,9 @@
 #include <unistd.h>
 #include <time.h>
 #include "boot.h"
-#define dr system("ogg123 ./music/dieram.ogg > /dev/null 2>&1 &")
 #define clear system("clear")
 
-//Zheng De AI V0.3-beta linux
-
-/*暴力寫入配置*/
-typedef struct banana
-{
-    int d;
-    struct banana *n;
-}ba;
+//Zheng De AI V0.4 linux
 
 /*AI說話函數*/
 void aiprintf(char c[500])
@@ -38,11 +30,11 @@ int main()
 
     char c[500];
     char aic[1000];
-    ba *a = NULL;
-    ba *z = NULL;
     int quiet = 0;
     int quiets = 0;
     int boots = 0;
+    FILE *fi = fopen("modle-pro.txt", "w");
+    fclose(fi);
 
     boot:
     clear;
@@ -50,17 +42,21 @@ int main()
 
     //boot回應
 
-    //close
-    if(boots == 1)
-    {
-        clear;
-        return 0;
-    }
-
     //reboot
-    else if(boots == 2)
+    if(boots == 2)
     {
         goto boot;
+    }
+
+    else if(boots == 0)
+    {
+        printf("\nloading Modle Pro...");
+        fi = fopen("modle-pro.txt", "a");
+        long long siz = (1024LL * 1024 * 1024) / 3;
+        for(long long i = 0; i < siz; i++)
+        {
+            fprintf(fi, "67\n");
+        }
     }
 
     else
@@ -135,7 +131,7 @@ int main()
                     strcpy(aic, "'家政課'是由符如華扶持的強大政權,並且符如華也是'葡萄園優格社'這個外部勢力的領導人");
                     aiprintf(aic);
                 }
-                else if(!strcmp(c, "向陽廣場附近的聲音是什麼生物的"))
+                else if(!strcmp(c, "向陽廣場附近的聲音是什麼生物的") && boots == 0)
                 {
                     int s = rand() % 114515;
                     usleep(500000);
@@ -156,48 +152,26 @@ int main()
                 }
                 else if(!strcmp(c, "boom"))
                 {
-                    strcpy(aic, "你確定?(y/n)");
+                    strcpy(aic, "you sure?(y/n)");
                     aiprintf(aic);
                     fgets(c, 500, stdin);
                     c[strcspn(c, "\n")] = '\0';
 
                     if(!strcmp(c, "y"))
                     {
-                        long long bb = 0;
-                        long long siz = ((1024LL * 1024 * 1024) * 4);
+                        strcpy(aic, "Hello RAMMMMM");
+                        aiprintf(aic);
+                        usleep(500000);
+                        printf("RAM: Hello AI");
+                        usleep(500000);
+                        strcpy(aic, "I want you to die!!!!!!!!!!!");
+                        aiprintf(aic);
                         sleep(1);
-                        clear;
-                        dr;
-                        usleep(100000);
-                        printf("AI:Attention,the reactor startup sequence has been initialized\n");
-                        sleep(3);
-                        printf("AI:Pease evacuate from the core chamber immediately\n");
-                        sleep(7);
-                        printf("AI:lnjecting fuel solution into lasers...\n");
-                        sleep(10);
-                        clear;
-                        printf("AI:Activating reactor lasers and beginning infusion sequence\n");
-                        sleep(12);
-
-                        for(long long i = 0; i < siz; i++)
+                        printf("RAM: NO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                        sleep(2);
+                        for(int i = 0; i < 6; i++)
                         {
-                            bb++;
-                            ba *bee = malloc(sizeof(ba));
-                            bee->d = 67;
-                            bee->n = NULL;
-
-                            if(a == NULL)
-                            {
-                                a = bee;
-                                z = bee;
-                            }
-                            else
-                            {
-                                z->n = bee;
-                                z = bee;
-                            }
-                            printf("已寫入%lld次\r",bb);
-                            fflush(stdout);
+                            calloc((1024LL * 1024 * 1024), sizeof(char));
                         }
                     }
                 }
@@ -217,12 +191,8 @@ int main()
             }
         }
     }
-    ba *na = a;
-    while(na != NULL)
-    {
-        ba *s = na;
-        na = na->n;
-        free(s);
-    }
+    //clear modle pro
+    fi = fopen("modle-pro.txt", "w");
+
     return 0;
 }

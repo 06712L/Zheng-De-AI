@@ -1,37 +1,32 @@
-<center>
-<img src="./AD/V0.3-alpha.3_AD.png" width="400">
-</center>
-
-# **正德人工智障**
-
-<img src="./LOGO/zhengdeai.png" width="200">
+<div align="center">
+<br />
+<img src="./LOGO/zhengdeai.png" width=200>
+<h1>正德人工智障</h1>
 
 這只是個垃圾項目,非真正要用AI的在下載
+</div>
 
 ## 跳轉
 
-- [跳轉](#跳轉) *(這個的意義是什麼?)*
-- [更新日誌](#v03更新日誌)
 - [特色功能](#特色功能)
 - [關於模型](#關於模型)
 - [可回應句子](#可回應句子)
 - [編譯所需環境](#編譯所需環境)
 - [Makefile](#makefile-僅限linux)
 
-## ***V0.3*更新日誌**
+## ***V0.4-alpha.1*更新日誌**
 
-- 增加一句可回應
-- \n回老家了,\r來替代
-- 加了個沒用的跳轉
+- 新增PRO版模型 *(free)*
+- 重寫boom底層
+- 幹掉了音檔
 
 ## **特色功能**
 
-- **十分有用**的加載
-- 沒甚麼用的**安靜模式**
-- 先進的**if else架構**
-- 純手工句子**千篇一律**
-- **CLI介面**
-- 可暴力寫入**67**
+- 有用的加載
+- 沒什麼用的安靜模式
+- 採用先進if else架構
+- 純手工句子千篇一律
+- CLI介面
 
 ## **關於模型**
 
@@ -50,7 +45,7 @@
 - who are you
 - 什麼是家政課
 - boom *(謹慎使用)*
-- 向陽廣場附近的聲音是什麼生物的
+- 向陽廣場附近的聲音是什麼生物的 *(PRO)*
 - 吃飯時適合配什麼
 - 退出
 - quit
@@ -60,18 +55,16 @@
 - Linux版編譯器:**`gcc`** / **`clang`** *(默認`gcc`)*
 - windows版編譯器:**`mingw32-gcc`** *(默認`mingw32-gcc`)*
 - 所需庫: **`stdio`**/**`stdlib`**/**`string`**/**`unistd`**/**`time`**
-- 所需軟件: **ogg123** *(only Linux)*
-- 但我已經打包好發行版了! *(僅windows X86-64和Linux X86-64,ogg123不包含在內)*
+- 但我已經打包好發行版了! *(僅windows X86-64和Linux X86-64)*
 
 ## **Makefile** *(僅限Linux)*
 
-- **`make` / `make Linux`**: 編譯Linux優化後的版本
-- **`make Linuxdebug`**: 編譯Linux未優化的版本
-- **`make win`**: 編譯Windows優化後的版本
-- **`make windebug`**: 編譯Windows未優化的版本
-- **`make clean`**: 清理Linux版編譯後產物
+- **`make` / `make Linux`**: 編譯Linux版本
+- **`make win`**: 編譯Windows版本
+- **`make linux/win DEBUG=1`**: 控制除錯 *(默認為0,不除錯)*
+- **`make cleanlinux`**: 清理Linux版編譯後產物
 - **`make cleanwin`**: 清理windows版編譯後產物
-- **`make cleanall`**: 清理所有編譯後產物
+- **`make clean`**: 清理所有編譯後產物
 
 ---
 
